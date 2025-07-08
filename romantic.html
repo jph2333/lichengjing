@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>鹏辉 ❤ 成晶 | 爱情纪念日</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+    <title>鹏辉❤成晶的专属浪漫</title>
     <style>
         * {
             margin: 0;
@@ -14,18 +12,17 @@
         }
         
         body {
-            font-family: 'ZCOOL XiaoWei', serif;
-            background: linear-gradient(135deg, #ffafbd, #ffc3a0, #a6c0fe, #f68084);
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ffafbd, #ffc3a0, #fbc2eb, #a6c1ee);
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
-            color: #fff;
-            overflow-x: hidden;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            text-align: center;
             padding: 20px;
+            overflow: hidden;
+            color: #fff;
         }
         
         @keyframes gradientBG {
@@ -35,111 +32,61 @@
         }
         
         .container {
+            text-align: center;
             max-width: 800px;
             width: 100%;
             padding: 30px;
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             border-radius: 20px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-            position: relative;
-            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         
-        .container::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
-            z-index: -1;
-        }
-        
-        .header {
-            margin-bottom: 20px;
-        }
-        
-        .couple-names {
-            font-family: 'Ma Shan Zheng', cursive;
-            font-size: 3.8rem;
-            margin-bottom: 15px;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-            color: #fff;
-            letter-spacing: 3px;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .couple-names::before, .couple-names::after {
-            content: '❤';
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #ff4d6d;
-            font-size: 2.5rem;
-            animation: pulse 2s infinite;
-        }
-        
-        .couple-names::before {
-            left: -60px;
-        }
-        
-        .couple-names::after {
-            right: -60px;
-        }
-        
-        @keyframes pulse {
-            0% { transform: translateY(-50%) scale(1); }
-            50% { transform: translateY(-50%) scale(1.2); }
-            100% { transform: translateY(-50%) scale(1); }
-        }
-        
-        .header h1 {
+        .title {
             font-size: 2.8rem;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            animation: pulse 2s infinite;
             color: #fff;
-            font-weight: 700;
-            letter-spacing: 1px;
         }
         
-        .header p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.9);
         }
         
-        /* 爱心容器尺寸 */
         .heart-container {
             position: relative;
-            width: 150px;
-            height: 150px;
-            margin: 20px auto;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         
         .heart {
             position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
-            background-color: #ff4d6d;
-            transform: rotate(45deg);
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            transform: rotate(-45deg);
+            border-radius: 50%;
+            box-shadow: 0 0 50px rgba(255, 107, 107, 0.7);
             animation: heartbeat 1.2s infinite;
-            box-shadow: 0 0 30px #ff4d6d, 0 0 40px #ff4d6d;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         
-        .heart::before,
-        .heart::after {
+        .heart::before, .heart::after {
             content: '';
             position: absolute;
             width: 100%;
             height: 100%;
-            background-color: #ff4d6d;
+            background: inherit;
             border-radius: 50%;
         }
         
@@ -150,83 +97,91 @@
         
         .heart::after {
             top: 0;
-            left: -50%;
+            right: -50%;
         }
         
-        @keyframes heartbeat {
-            0% { transform: rotate(45deg) scale(1); }
-            25% { transform: rotate(45deg) scale(1.1); }
-            40% { transform: rotate(45deg) scale(1); }
-            60% { transform: rotate(45deg) scale(1.1); }
-            100% { transform: rotate(45deg) scale(1); }
+        .days-info {
+            position: relative;
+            z-index: 10;
+            transform: rotate(45deg);
+            color: white;
+            text-align: center;
+            width: 100%;
         }
         
-        .timer {
+        .days-number {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .days-label {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .together, .countdown {
+            position: absolute;
+            width: 50%;
+            height: 100%;
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin: 30px 0;
-            flex-wrap: wrap;
+            align-items: center;
+            z-index: 20;
         }
         
-        .time-box {
-            background: rgba(255, 255, 255, 0.2);
+        .together {
+            left: 0;
+            transform: rotate(45deg);
+        }
+        
+        .countdown {
+            right: 0;
+            transform: rotate(-45deg);
+        }
+        
+        .info-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 40px 0;
+        }
+        
+        .info-box {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px;
             border-radius: 15px;
-            padding: 15px 10px;
-            min-width: 110px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            width: 45%;
             backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
             transition: transform 0.3s ease;
         }
         
-        .time-box:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.3);
+        .info-box:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.25);
         }
         
-        .time-value {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 5px;
-            text-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+        .info-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
             color: #fff;
-        }
-        
-        .time-label {
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            opacity: 0.9;
-        }
-        
-        .love-quote {
-            font-style: italic;
-            margin: 25px auto;
-            font-size: 1.3rem;
-            max-width: 600px;
             text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        
+        .info-content {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.95);
+        }
+        
+        .love-message {
+            font-size: 1.3rem;
             line-height: 1.6;
-            position: relative;
-            padding: 0 20px;
-        }
-        
-        .love-quote::before,
-        .love-quote::after {
-            content: '"';
-            font-size: 2.2rem;
-            position: absolute;
-            color: rgba(255, 255, 255, 0.4);
-        }
-        
-        .love-quote::before {
-            top: -15px;
-            left: 0;
-        }
-        
-        .love-quote::after {
-            bottom: -35px;
-            right: 0;
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            border-left: 4px solid #ff6b6b;
         }
         
         .floating-hearts {
@@ -239,234 +194,208 @@
             z-index: -1;
         }
         
-        .floating-heart {
+        .heart-shape {
             position: absolute;
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 16px;
-            animation: float 8s linear infinite;
+            width: 20px;
+            height: 20px;
+            background: #ff6b6b;
+            transform: rotate(-45deg);
+            opacity: 0;
+        }
+        
+        .heart-shape:before, .heart-shape:after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #ff6b6b;
+            border-radius: 50%;
+        }
+        
+        .heart-shape:before {
+            top: -10px;
+            left: 0;
+        }
+        
+        .heart-shape:after {
+            top: 0;
+            left: 10px;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: rotate(-45deg) scale(0.95); }
+            5% { transform: rotate(-45deg) scale(1.05); }
+            10% { transform: rotate(-45deg) scale(0.95); }
+            15% { transform: rotate(-45deg) scale(1); }
+            100% { transform: rotate(-45deg) scale(0.95); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
         
         @keyframes float {
-            to {
-                transform: translate(0, -100vh) rotate(360deg);
-                opacity: 0;
-            }
+            0% { transform: translateY(0) rotate(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
         }
         
-        .special-date {
-            margin-top: 15px;
-            font-size: 1.1rem;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 12px 25px;
-            border-radius: 15px;
-            display: inline-block;
-        }
-        
-        .personal-message {
-            margin-top: 25px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 15px;
-            font-size: 1.1rem;
-            line-height: 1.6;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            position: relative;
-        }
-        
-        .personal-message::before {
-            content: "❤";
-            position: absolute;
-            top: -15px;
-            left: -15px;
-            font-size: 2rem;
-            color: #ff4d6d;
-        }
-        
-        .personal-message::after {
-            content: "❤";
-            position: absolute;
-            bottom: -15px;
-            right: -15px;
-            font-size: 2rem;
-            color: #ff4d6d;
-        }
-        
-        .footer {
-            margin-top: 25px;
-            font-size: 1.1rem;
-            opacity: 0.8;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .signature {
-            font-family: 'Ma Shan Zheng', cursive;
-            font-size: 1.5rem;
-            color: #ffeb3b;
-            text-shadow: 0 0 5px rgba(0,0,0,0.3);
-        }
-        
-        @media (max-width: 600px) {
-            .couple-names {
-                font-size: 2.8rem;
-            }
-            .couple-names::before {
-                left: -40px;
-            }
-            .couple-names::after {
-                right: -40px;
-            }
-            .header h1 { font-size: 2.2rem; }
-            .header p { font-size: 1rem; }
-            .time-box { min-width: 90px; padding: 12px 8px; }
-            .time-value { font-size: 2rem; }
-            .love-quote { font-size: 1.1rem; }
-            .heart-container {
-                width: 120px;
-                height: 120px;
-            }
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .title { font-size: 2.2rem; }
+            .subtitle { font-size: 1.2rem; }
+            .heart-container { width: 250px; height: 250px; }
+            .days-number { font-size: 2.8rem; }
+            .info-container { flex-direction: column; align-items: center; }
+            .info-box { width: 100%; margin-bottom: 20px; }
         }
     </style>
 </head>
 <body>
-    <div class="floating-hearts" id="floatingHearts"></div>
+    <div class="floating-hearts" id="hearts-container"></div>
     
     <div class="container">
-        <div class="header">
-            <div class="couple-names">姜鹏辉 李成晶</div>
-            <h1><i class="fas fa-heart"></i> 专属爱情纪念日 <i class="fas fa-heart"></i></h1>
-            <p>从2025年6月7日开始，我们的故事翻开了最美的篇章。每一天与你相伴，都是生命中最珍贵的礼物。</p>
-        </div>
+        <h1 class="title">鹏辉 ❤ 成晶</h1>
+        <p class="subtitle">我们的爱情时光</p>
         
         <div class="heart-container">
             <div class="heart"></div>
-        </div>
-        
-        <div class="timer">
-            <div class="time-box">
-                <div class="time-value" id="days">0</div>
-                <div class="time-label">天</div>
+            <div class="together">
+                <div class="days-info">
+                    <div class="days-number" id="together-days">0</div>
+                    <div class="days-label">在一起的日子</div>
+                </div>
             </div>
-            <div class="time-box">
-                <div class="time-value" id="hours">0</div>
-                <div class="time-label">小时</div>
-            </div>
-            <div class="time-box">
-                <div class="time-value" id="minutes">0</div>
-                <div class="time-label">分钟</div>
-            </div>
-            <div class="time-box">
-                <div class="time-value" id="seconds">0</div>
-                <div class="time-label">秒钟</div>
+            <div class="countdown">
+                <div class="days-info">
+                    <div class="days-number" id="countdown-days">0</div>
+                    <div class="days-label">下次见面倒计时</div>
+                </div>
             </div>
         </div>
         
-        <div class="love-quote">
-            "鹏辉与成晶在一起的时光，就是我们想要的全部永恒。每一天，每一秒，都因为彼此而变得不同凡响。"
+        <div class="info-container">
+            <div class="info-box">
+                <div class="info-title">我们的故事</div>
+                <div class="info-content">相识于 2025年6月7日<br>在最美的时光遇见彼此</div>
+            </div>
+            <div class="info-box">
+                <div class="info-title">下次见面</div>
+                <div class="info-content">2025年8月1日<br>期待与你重逢的日子</div>
+            </div>
         </div>
         
-        <div class="special-date">
-            <i class="fas fa-calendar-alt"></i> 我们的开始: <span id="startDate">2025年6月7日</span>
-        </div>
-        
-        <div class="personal-message">
-            亲爱的成晶，<br><br>
-            从遇见你的那一刻起，我的世界便充满了色彩。你的笑容是我每天的动力，你的温柔是我最珍贵的宝藏。<br>
-            这个页面记录着我们相爱的每一刻，正如我的心里刻满了你的名字。<br><br>
-            永远爱你的鹏辉
-        </div>
-        
-        <div class="footer">
-            <span>每一秒都值得纪念，因为每一秒都有你</span>
-            <div class="signature">鹏辉 ❤ 成晶</div>
+        <div class="love-message">
+            每一刻的思念都化作心间的暖流，每一个日夜的等待都让重逢更加珍贵。<br>
+            距离下次见面还有 <span id="countdown-text">0</span> 天，但我的心早已飞到你身边。
         </div>
     </div>
 
     <script>
-        // 设置为2025年6月7日 (年, 月-1, 日, 时, 分)
-        const togetherDate = new Date(2025, 5, 7, 12, 0);
-        
-        // 更新显示在一起的日期
-        document.getElementById('startDate').textContent = formatDate(togetherDate);
-        
-        function formatDate(date) {
-            const year = date.getFullYear();
-            const month = date.getMonth() + 1;
-            const day = date.getDate();
-            return `${year}年${month}月${day}日`;
-        }
-        
-        function updateTimer() {
-            const now = new Date();
-            const diff = now - togetherDate;
-            
-            // 计算天、小时、分钟、秒
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-            
-            // 更新页面显示
-            document.getElementById('days').textContent = days;
-            document.getElementById('hours').textContent = hours;
-            document.getElementById('minutes').textContent = minutes;
-            document.getElementById('seconds').textContent = seconds;
-        }
-        
-        // 初始更新
-        updateTimer();
-        // 每秒更新一次
-        setInterval(updateTimer, 1000);
-        
-        // 创建漂浮的爱心
+        // 创建漂浮爱心
         function createFloatingHearts() {
-            const container = document.getElementById('floatingHearts');
-            const heartCount = 25;
+            const container = document.getElementById('hearts-container');
+            const heartCount = 30;
             
             for (let i = 0; i < heartCount; i++) {
-                const heart = document.createElement('div');
-                heart.classList.add('floating-heart');
-                heart.innerHTML = '❤';
-                
-                // 随机位置
-                const startLeft = Math.random() * 100;
-                const startTop = Math.random() * 100;
-                heart.style.left = `${startLeft}%`;
-                heart.style.top = `${startTop}%`;
-                
-                // 随机大小
-                const size = Math.random() * 20 + 8;
-                heart.style.fontSize = `${size}px`;
-                
-                // 随机动画延迟
-                const delay = Math.random() * 5;
-                heart.style.animationDelay = `${delay}s`;
-                
-                // 随机颜色
-                const colors = ['#ff9aa2', '#ffb7b2', '#ffdac1', '#e2f0cb', '#b5ead7', '#c7ceea'];
-                const color = colors[Math.floor(Math.random() * colors.length)];
-                heart.style.color = color;
-                
-                container.appendChild(heart);
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.classList.add('heart-shape');
+                    
+                    // 随机位置
+                    const startLeft = Math.random() * 100;
+                    heart.style.left = `${startLeft}vw`;
+                    heart.style.bottom = `-30px`;
+                    
+                    // 随机大小
+                    const size = 10 + Math.random() * 20;
+                    heart.style.width = `${size}px`;
+                    heart.style.height = `${size}px`;
+                    
+                    // 随机颜色
+                    const colors = ['#ff6b6b', '#ff8e8e', '#ffafbd', '#fbc2eb'];
+                    const color = colors[Math.floor(Math.random() * colors.length)];
+                    heart.style.background = color;
+                    heart.style.setProperty('--heart-color', color);
+                    
+                    // 动画
+                    const duration = 10 + Math.random() * 20;
+                    const delay = Math.random() * 15;
+                    heart.style.animation = `float ${duration}s linear ${delay}s infinite`;
+                    
+                    container.appendChild(heart);
+                }, i * 500);
             }
         }
         
-        // 页面加载完成后创建漂浮爱心
-        window.addEventListener('load', createFloatingHearts);
+        // 计算日期差
+        function calculateDateDifferences() {
+            // 相识日期：2025年6月7日
+            const startDate = new Date(2025, 5, 7); // 注意：月份从0开始，6月是5
+            
+            // 下次见面日期：2025年8月1日
+            const nextMeeting = new Date(2025, 7, 1); // 8月是7
+            
+            // 当前日期
+            const today = new Date();
+            
+            // 计算在一起的天数
+            const togetherTime = today - startDate;
+            const togetherDays = Math.floor(togetherTime / (1000 * 60 * 60 * 24));
+            
+            // 计算下次见面的倒计时
+            const countdownTime = nextMeeting - today;
+            const countdownDays = Math.ceil(countdownTime / (1000 * 60 * 60 * 24));
+            
+            return {
+                togetherDays: togetherDays,
+                countdownDays: countdownDays
+            };
+        }
         
-        // 添加背景音乐
-        window.addEventListener('click', function() {
-            const audio = document.createElement('audio');
-            audio.src = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3';
-            audio.loop = true;
-            audio.volume = 0.3;
-            document.body.appendChild(audio);
-            audio.play().catch(e => console.log("需要用户交互才能播放音乐"));
-        }, { once: true });
+        // 更新页面显示
+        function updateDisplay() {
+            const dates = calculateDateDifferences();
+            
+            document.getElementById('together-days').textContent = dates.togetherDays;
+            document.getElementById('countdown-days').textContent = dates.countdownDays;
+            document.getElementById('countdown-text').textContent = dates.countdownDays;
+        }
+        
+        // 初始化
+        window.onload = function() {
+            createFloatingHearts();
+            updateDisplay();
+            
+            // 每秒更新一次，使数字有动画效果
+            let daysTogether = parseInt(document.getElementById('together-days').textContent);
+            let daysCountdown = parseInt(document.getElementById('countdown-days').textContent);
+            
+            let currentTogether = 0;
+            let currentCountdown = 0;
+            
+            const togetherInterval = setInterval(() => {
+                if (currentTogether < daysTogether) {
+                    currentTogether++;
+                    document.getElementById('together-days').textContent = currentTogether;
+                } else {
+                    clearInterval(togetherInterval);
+                }
+            }, 30);
+            
+            const countdownInterval = setInterval(() => {
+                if (currentCountdown < daysCountdown) {
+                    currentCountdown++;
+                    document.getElementById('countdown-days').textContent = currentCountdown;
+                    document.getElementById('countdown-text').textContent = currentCountdown;
+                } else {
+                    clearInterval(countdownInterval);
+                }
+            }, 30);
+        };
     </script>
 </body>
 </html>
