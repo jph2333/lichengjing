@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我们的爱情纪念日</title>
+    <title>鹏辉 ❤ 成晶 | 爱情纪念日</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,7 +14,7 @@
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'ZCOOL XiaoWei', serif;
             background: linear-gradient(135deg, #ffafbd, #ffc3a0, #a6c0fe, #f68084);
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
@@ -60,6 +61,41 @@
             margin-bottom: 20px;
         }
         
+        .couple-names {
+            font-family: 'Ma Shan Zheng', cursive;
+            font-size: 3.8rem;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            color: #fff;
+            letter-spacing: 3px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .couple-names::before, .couple-names::after {
+            content: '❤';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #ff4d6d;
+            font-size: 2.5rem;
+            animation: pulse 2s infinite;
+        }
+        
+        .couple-names::before {
+            left: -60px;
+        }
+        
+        .couple-names::after {
+            right: -60px;
+        }
+        
+        @keyframes pulse {
+            0% { transform: translateY(-50%) scale(1); }
+            50% { transform: translateY(-50%) scale(1.2); }
+            100% { transform: translateY(-50%) scale(1); }
+        }
+        
         .header h1 {
             font-size: 2.8rem;
             margin-bottom: 15px;
@@ -77,12 +113,12 @@
             text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
         }
         
-        /* 爱心容器尺寸缩小 */
+        /* 爱心容器尺寸 */
         .heart-container {
             position: relative;
-            width: 150px;  /* 尺寸缩小 */
-            height: 150px;  /* 尺寸缩小 */
-            margin: 20px auto; /* 减少外边距 */
+            width: 150px;
+            height: 150px;
+            margin: 20px auto;
         }
         
         .heart {
@@ -94,7 +130,7 @@
             background-color: #ff4d6d;
             transform: rotate(45deg);
             animation: heartbeat 1.2s infinite;
-            box-shadow: 0 0 30px #ff4d6d, 0 0 40px #ff4d6d; /* 阴影调整 */
+            box-shadow: 0 0 30px #ff4d6d, 0 0 40px #ff4d6d;
         }
         
         .heart::before,
@@ -128,16 +164,16 @@
         .timer {
             display: flex;
             justify-content: center;
-            gap: 15px; /* 间隙缩小 */
-            margin: 30px 0; /* 外边距调整 */
+            gap: 15px;
+            margin: 30px 0;
             flex-wrap: wrap;
         }
         
         .time-box {
             background: rgba(255, 255, 255, 0.2);
             border-radius: 15px;
-            padding: 15px 10px; /* 内边距缩小 */
-            min-width: 110px; /* 宽度缩小 */
+            padding: 15px 10px;
+            min-width: 110px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
             backdrop-filter: blur(5px);
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -145,12 +181,12 @@
         }
         
         .time-box:hover {
-            transform: translateY(-5px); /* 悬浮效果减弱 */
+            transform: translateY(-5px);
             background: rgba(255, 255, 255, 0.3);
         }
         
         .time-value {
-            font-size: 2.5rem; /* 字体缩小 */
+            font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 5px;
             text-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
@@ -158,7 +194,7 @@
         }
         
         .time-label {
-            font-size: 1rem; /* 字体缩小 */
+            font-size: 1rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             opacity: 0.9;
@@ -166,8 +202,8 @@
         
         .love-quote {
             font-style: italic;
-            margin: 25px auto; /* 外边距调整 */
-            font-size: 1.3rem; /* 字体缩小 */
+            margin: 25px auto;
+            font-size: 1.3rem;
             max-width: 600px;
             text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
             line-height: 1.6;
@@ -178,7 +214,7 @@
         .love-quote::before,
         .love-quote::after {
             content: '"';
-            font-size: 2.2rem; /* 字体缩小 */
+            font-size: 2.2rem;
             position: absolute;
             color: rgba(255, 255, 255, 0.4);
         }
@@ -206,7 +242,7 @@
         .floating-heart {
             position: absolute;
             color: rgba(255, 255, 255, 0.6);
-            font-size: 16px; /* 漂浮爱心缩小 */
+            font-size: 16px;
             animation: float 8s linear infinite;
         }
         
@@ -217,30 +253,73 @@
             }
         }
         
-        .footer {
-            margin-top: 25px;
-            font-size: 1.1rem;
-            opacity: 0.8;
-        }
-        
         .special-date {
             margin-top: 15px;
             font-size: 1.1rem;
             background: rgba(255, 255, 255, 0.2);
-            padding: 12px;
+            padding: 12px 25px;
             border-radius: 15px;
             display: inline-block;
         }
         
-        .deploy-info {
-            margin-top: 30px;
-            padding: 15px;
-            background: rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            font-size: 0.9rem;
+        .personal-message {
+            margin-top: 25px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+        }
+        
+        .personal-message::before {
+            content: "❤";
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            font-size: 2rem;
+            color: #ff4d6d;
+        }
+        
+        .personal-message::after {
+            content: "❤";
+            position: absolute;
+            bottom: -15px;
+            right: -15px;
+            font-size: 2rem;
+            color: #ff4d6d;
+        }
+        
+        .footer {
+            margin-top: 25px;
+            font-size: 1.1rem;
+            opacity: 0.8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .signature {
+            font-family: 'Ma Shan Zheng', cursive;
+            font-size: 1.5rem;
+            color: #ffeb3b;
+            text-shadow: 0 0 5px rgba(0,0,0,0.3);
         }
         
         @media (max-width: 600px) {
+            .couple-names {
+                font-size: 2.8rem;
+            }
+            .couple-names::before {
+                left: -40px;
+            }
+            .couple-names::after {
+                right: -40px;
+            }
             .header h1 { font-size: 2.2rem; }
             .header p { font-size: 1rem; }
             .time-box { min-width: 90px; padding: 12px 8px; }
@@ -258,7 +337,8 @@
     
     <div class="container">
         <div class="header">
-            <h1><i class="fas fa-heart"></i> 给最爱的你 <i class="fas fa-heart"></i></h1>
+            <div class="couple-names">姜鹏辉 李成晶</div>
+            <h1><i class="fas fa-heart"></i> 专属爱情纪念日 <i class="fas fa-heart"></i></h1>
             <p>从2025年6月7日开始，我们的故事翻开了最美的篇章。每一天与你相伴，都是生命中最珍贵的礼物。</p>
         </div>
         
@@ -286,19 +366,23 @@
         </div>
         
         <div class="love-quote">
-            "和你在一起的时光，就是我想要的全部永恒。每一天，每一秒，都因为有你而变得不同凡响。"
+            "鹏辉与成晶在一起的时光，就是我们想要的全部永恒。每一天，每一秒，都因为彼此而变得不同凡响。"
         </div>
         
         <div class="special-date">
             <i class="fas fa-calendar-alt"></i> 我们的开始: <span id="startDate">2025年6月7日</span>
         </div>
         
-        <div class="footer">
-            每一秒都值得纪念，因为每一秒都有你
+        <div class="personal-message">
+            亲爱的成晶，<br><br>
+            从遇见你的那一刻起，我的世界便充满了色彩。你的笑容是我每天的动力，你的温柔是我最珍贵的宝藏。<br>
+            这个页面记录着我们相爱的每一刻，正如我的心里刻满了你的名字。<br><br>
+            永远爱你的鹏辉
         </div>
         
-        <div class="deploy-info">
-            提示: 此页面已设置为2025年6月7日开始计时，爱心尺寸已优化
+        <div class="footer">
+            <span>每一秒都值得纪念，因为每一秒都有你</span>
+            <div class="signature">鹏辉 ❤ 成晶</div>
         </div>
     </div>
 
@@ -341,7 +425,7 @@
         // 创建漂浮的爱心
         function createFloatingHearts() {
             const container = document.getElementById('floatingHearts');
-            const heartCount = 25; // 减少漂浮爱心数量
+            const heartCount = 25;
             
             for (let i = 0; i < heartCount; i++) {
                 const heart = document.createElement('div');
@@ -355,7 +439,7 @@
                 heart.style.top = `${startTop}%`;
                 
                 // 随机大小
-                const size = Math.random() * 20 + 8; // 缩小漂浮爱心尺寸
+                const size = Math.random() * 20 + 8;
                 heart.style.fontSize = `${size}px`;
                 
                 // 随机动画延迟
@@ -373,6 +457,16 @@
         
         // 页面加载完成后创建漂浮爱心
         window.addEventListener('load', createFloatingHearts);
+        
+        // 添加背景音乐
+        window.addEventListener('click', function() {
+            const audio = document.createElement('audio');
+            audio.src = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3';
+            audio.loop = true;
+            audio.volume = 0.3;
+            document.body.appendChild(audio);
+            audio.play().catch(e => console.log("需要用户交互才能播放音乐"));
+        }, { once: true });
     </script>
 </body>
 </html>
