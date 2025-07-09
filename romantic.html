@@ -42,7 +42,7 @@
         }
         
         .header {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
         
         h1 {
@@ -65,12 +65,12 @@
             color: #e84393;
         }
         
-        /* 缩小爱心尺寸为原来的70% */
+        /* 中间大爱心尺寸优化 - 确保不遮挡文字 */
         .heart-container {
             position: relative;
-            width: 140px; /* 原200px的70% */
-            height: 140px; /* 原200px的70% */
-            margin: 0 auto 20px;
+            width: 100px; /* 进一步缩小 */
+            height: 100px; 
+            margin: 0 auto 15px;
             animation: heartbeat 1.5s infinite;
         }
         
@@ -106,27 +106,27 @@
         }
         
         .days-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
+            position: relative; /* 改为相对定位，独立于爱心 */
+            margin: 20px auto;
+            color: #d63b75;
             z-index: 2;
             text-align: center;
             width: 100%;
         }
         
         .days-text {
-            font-size: 30px; /* 原42px的70% */
+            font-size: 48px; /* 增大天数文字 */
             font-weight: 800;
-            margin-bottom: 4px;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            margin-bottom: 5px;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            color: #ff4757;
         }
         
         .days-label {
-            font-size: 14px; /* 原16px的87.5% */
-            font-weight: 500;
+            font-size: 18px;
+            font-weight: 600;
             letter-spacing: 0.5px;
+            color: #7a5694;
         }
         
         .message {
@@ -144,13 +144,16 @@
             color: #d63b75;
         }
         
+        /* 点击爱心减小 */
         .click-heart {
             position: absolute;
             pointer-events: none;
             opacity: 0;
-            font-size: 24px;
+            font-size: 24px; /* 减小点击爱心尺寸 */
             color: #e84393;
             z-index: 100;
+            animation: float 2s ease-out forwards;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
         }
         
         .footer {
@@ -163,7 +166,7 @@
         }
         
         .instructions {
-            margin-top: 12px;
+            margin-top: 15px;
             font-size: 13px;
             color: #7a5694;
             background: rgba(255, 255, 255, 0.4);
@@ -181,8 +184,18 @@
         }
         
         @keyframes float {
-            0% { transform: translateY(0) scale(1); opacity: 1; }
-            100% { transform: translateY(-100px) scale(0); opacity: 0; }
+            0% { 
+                transform: translateY(0) scale(1); 
+                opacity: 1; 
+            }
+            50% {
+                transform: translateY(-50px) scale(1.2);
+                opacity: 0.8;
+            }
+            100% { 
+                transform: translateY(-100px) scale(0); 
+                opacity: 0; 
+            }
         }
         
         @keyframes fadeIn {
@@ -207,7 +220,7 @@
         
         .floating-heart {
             position: absolute;
-            font-size: 20px;
+            font-size: 18px;
             color: rgba(232, 67, 147, 0.7);
             bottom: -50px;
             animation: floatUp 15s linear infinite;
@@ -221,21 +234,65 @@
             padding: 0 15px;
             line-height: 1.5;
         }
+        
+        .love-icon {
+            font-size: 24px;
+            color: #ff4757;
+            margin: 0 5px;
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        
+        .heart-decoration {
+            display: flex;
+            justify-content: center;
+            margin: 15px 0;
+        }
+        
+        .decoration-heart {
+            margin: 0 5px;
+            color: #ff6b81;
+            font-size: 20px;
+            animation: floatUp 8s linear infinite;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>姜鹏辉 <i class="fas fa-heart"></i> 李成晶</h1>
+            <h1>姜鹏辉 <i class="fas fa-heart love-icon"></i> 李成晶</h1>
+            <div class="subtitle"><i class="far fa-calendar-alt"></i> 相识于 2025年6月7日</div>
+        </div>
+        
+        <div class="heart-decoration">
+            <div class="decoration-heart">❤</div>
+            <div class="decoration-heart">❤</div>
+            <div class="decoration-heart">❤</div>
         </div>
         
         <div class="heart-container">
             <div class="big-heart"></div>
         </div>
         
+        <div class="days-content">
+            <div class="days-text" id="daysCount">0</div>
+            <div class="days-label">相爱的日子</div>
+        </div>
+        
+        <div class="heart-decoration">
+            <div class="decoration-heart">❤</div>
+            <div class="decoration-heart">❤</div>
+            <div class="decoration-heart">❤</div>
+        </div>
+        
         <div class="love-quote">"与你相遇，是生命最美的奇迹；与你相守，是时光最深的承诺"</div>
         
-        <div class="message">亲爱的<strong>宝宝</strong>，期待与你一起度过每一个6月7日</div>
+        <div class="message">亲爱的<strong>宝宝</strong>，自从遇见你的那天起，我的世界便充满了色彩。每一天都因你而更加美好！</div>
         
         <div class="instructions">点击屏幕任意位置，让爱心飘满我们的回忆</div>
     </div>
@@ -307,35 +364,31 @@
             }, 30);
         }
         
-        // 创建点击爱心效果
+        // 创建点击爱心效果（减小版本）
         document.addEventListener('click', function(e) {
             const heart = document.createElement('div');
             heart.classList.add('click-heart');
             heart.innerHTML = '❤';
             
-            // 随机大小
-            const size = Math.random() * 25 + 18;
+            // 随机大小（减小）
+            const size = Math.random() * 20 + 20; // 20-40px
             heart.style.fontSize = `${size}px`;
             
             // 随机颜色
-            const colors = ['#e84393', '#fd79a8', '#ff6b81', '#ff4757', '#ff7979'];
+            const colors = ['#e84393', '#fd79a8', '#ff6b81', '#ff4757', '#ff7979', '#ff4d94'];
             const color = colors[Math.floor(Math.random() * colors.length)];
             heart.style.color = color;
             
             // 设置位置
-            heart.style.left = `${e.clientX}px`;
-            heart.style.top = `${e.clientY}px`;
+            heart.style.left = `${e.clientX - size/2}px`;
+            heart.style.top = `${e.clientY - size/2}px`;
             
             document.body.appendChild(heart);
-            
-            // 设置动画
-            const animation = `float ${Math.random() * 2 + 1}s ease-out forwards`;
-            heart.style.animation = animation;
             
             // 动画结束后移除元素
             setTimeout(() => {
                 heart.remove();
-            }, 3000);
+            }, 2000);
         });
         
         // 初始化
